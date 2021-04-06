@@ -30,7 +30,7 @@ GetLandmarkName::
 	ld l, a
 
 	ld de, wStringBuffer1
-	ld c, 18
+	ld c, 19
 .copy
 	ld a, [hli]
 	ld [de], a

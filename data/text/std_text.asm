@@ -211,7 +211,7 @@ MartSignText:
 	text "For All Your"
 	line "#MON Needs"
 
-	para "#MON MART"
+	para "#MON SHOP"
 	done
 
 ContestResults_ReadyToJudgeText:
