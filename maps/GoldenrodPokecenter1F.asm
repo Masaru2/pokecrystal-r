@@ -51,7 +51,7 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	end
 
 GoldenrodPokecenter1F_GSBallSceneRight:
-	setevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .gsball
 	end
 
