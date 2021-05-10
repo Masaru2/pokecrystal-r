@@ -110,7 +110,7 @@ _DebugRoom:
 	db "RAM FLAG CLR@"
 	db "CHANGE SEX@"
 	db "BT BUG POKE@"
-	db "COLOR MENU@"
+	db "#MON MENU@"
 	db "TRAINER MENU@"
 
 .Jumptable:
