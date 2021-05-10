@@ -29,6 +29,7 @@ DEBUGROOMMENU_NUM_PAGES EQU const_value
 	const DEBUGROOMMENUITEM_CHANGE_SEX   ; 13
 	const DEBUGROOMMENUITEM_BT_BUG_POKE  ; 14
 	const DEBUGROOMMENUITEM_COLOR_MENU	 ; 15
+	const DEBUGROOMMENUITEM_TRAINER_MENU ; 16
 
 _DebugRoom:
 	ldh a, [hJoyDown]
@@ -110,6 +111,7 @@ _DebugRoom:
 	db "CHANGE SEX@"
 	db "BT BUG POKE@"
 	db "COLOR MENU@"
+	db "TRAINER MENU@"
 
 .Jumptable:
 ; entries correspond to DEBUGROOMMENUITEM_* constants
@@ -135,6 +137,7 @@ _DebugRoom:
 	dw DebugRoomMenu_ChangeSex
 	dw DebugRoomMenu_BTBugPoke
 	dw DebugRoomMenu_ColorMenu
+	dw DebugRoomMenu_TrainerMenu
 
 .MenuItems:
 ; entries correspond to DEBUGROOMMENU_* constants
@@ -164,13 +167,14 @@ _DebugRoom:
 	db -1
 
 	; DEBUGROOMMENU_PAGE_3
-	db 7
+	db 8
 	db DEBUGROOMMENUITEM_TEL_DEBUG
 	db DEBUGROOMMENUITEM_SUM_RECALC
 	db DEBUGROOMMENUITEM_RAM_FLAG_CLR
 	db DEBUGROOMMENUITEM_CHANGE_SEX
 	db DEBUGROOMMENUITEM_BT_BUG_POKE
 	db DEBUGROOMMENUITEM_COLOR_MENU
+	db DEBUGROOMMENUITEM_TRAINER_MENU
 	db DEBUGROOMMENUITEM_NEXT
 	db -1
 
@@ -1769,3 +1773,9 @@ PrintHexNumber:
 
 DebugRoomMenu_ColorMenu:
 	farcall DebugColorPicker
+	
+DebugRoomMenu_TrainerMenu:
+	ld a, 1
+	ld [wDebugColorIsTrainer], a
+	farcall DebugColorPicker
+	ret
