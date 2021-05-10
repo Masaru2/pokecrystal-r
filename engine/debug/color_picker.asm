@@ -356,7 +356,7 @@ DebugColor_InitScreen:
 .normal
 	ld de, .NormalText
 .place_text
-	hlcoord 9, 17
+	hlcoord 8, 17
 	call PlaceString
 	hlcoord 0, 17
 	ld de, .SwitchText
